@@ -1,0 +1,72 @@
+{% for district in site.data.districts %}
+    {% if district.number == page.district_number %}
+        <section id="intro" style="padding-top:50px">
+            <div class="container">
+                <div class="row">
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12">
+                            <h1 class="">{{ page.title }}: {{ page.month }}, {{ page.year }}</h1>
+                            <h4 class="talking-point-subtitle">Theme: {{ page.theme }}</h4>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <section id="talking-points">
+            <div class="container">
+                <div class="row bs-callout">
+                    <div class="col-lg-12 col-sm-12"><h2>{{ page.month }}'s Talking Points:</h2></div>
+                    <div class="col-lg-12 col-sm-12">
+                        <h3>1. Gratitude</h3>
+                        <h4 class="talking-point-subtitle">A recent action by Rep. {{ district.member.last_name }} you can thank him for:</h4>
+                        <div class="col-lg-12 col-sm-12">
+                            <p>{{ page.gratitude.text }}{% if page.gratitude.link %} (<a href="{{ page.gratitude.link }}" target="_blank">background info</a>){% endif %}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12">
+                        <h3>2. Education</h3>
+                        <h4 class="talking-point-subtitle">A climate fact or event recently in the news:</h4>
+                        <div class="col-lg-12 col-sm-12">
+                            <p>{{ page.education.text }}{% if page.education.link %} (<a href="{{ page.education.link }}" target="_blank">more info</a>){% endif %}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12">
+                        <h3>3. Request</h3>
+                        <h4 class="talking-point-subtitle">A specific requests for Rep. {{ district.member.last_name }}:</h4>
+                        <div class="col-lg-12 col-sm-12">
+                            <p>{{ page.request.text }}{% if page.request.link %} (<a href="{{ page.request.link }}" target="_blank">background info</a>){% endif %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="how-this-works">
+            <div class="container">
+                <div class="row bs-callout">
+                    <div class="col-lg-12 col-sm-12"><h2>How This Works</h2></div>
+                    <div class="col-lg-6 col-sm-6">
+                        <h3>The Call</h3>
+                        <p>Calling is simple, fast and non-threatening. You will either talk to a young staff member (not Rep. {{ district.member.last_name }}) or you will get a recording. Staff will not quiz you.</p>
+                        <p>They just want to know your name and address so they can confirm you live in District {{ district.number }}. Then they will listen and make notes while you tell them your talking points. They will thank you, and you’re done.  Simple as that.</p>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-6">
+                        <h3>Rep. {{ district.member.last_name }} ({{ district.state }}-{{ district.number }}) </h3>
+                        <div class="col-md-4 col-md-offset-0 col-xs-offset-4 col-sm-offset-4 col-xs-4 col-sm-4">
+                            <img class="img-responsive" src="/assets/img/info/{{ district.member.last_name | downcase }}.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 col-md-offset-1 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
+                            <h4>Offices</h4>
+                            <ul>
+                                {% for office in district.offices %}
+                                    <li>
+                                        <p>{{ office.city }}: {{ office.phone }}</p>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <p>Please call the office closest to you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endfor %}

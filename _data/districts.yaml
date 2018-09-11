@@ -1,0 +1,34 @@
+- state: TX
+  number: 25
+  offices:
+    - city: Austin
+      phone: 512-473-8910
+    - city: Cleburne
+      phone: 817-774-2575
+    - city: Washington D.C.
+      phone: 202-225-9896
+  member:
+    first_name: Roger
+    last_name: Williams
+- state: TX
+  number: 21
+  offices:
+    - city: Austin
+      phone: 512-xxx-xxxx
+    - city: Kerrville
+      phone: xxx-xxx-xxx
+    - city: Washington D.C.
+      phone: 202-xxx-xxx
+  member:
+    name: Lamar Smith
+- state: TX
+  number: 10
+  offices:
+    - city: Austin
+      phone: 512-xxx-xxxx
+    - city: Houston
+      phone: xxx-xxx-xxx
+    - city: Washington D.C.
+      phone: 202-xxx-xxxx
+  member:
+    name: Michael McCaul
