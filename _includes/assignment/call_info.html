@@ -6,43 +6,18 @@
                         <div class="clearfix"></div>
                         <div class="col-lg-12">
                             <h1 class="">{{ page.title }}: {{ page.month }}, {{ page.year }}</h1>
-                            <h4 class="talking-point-subtitle">Theme: {{ page.theme }}</h4>
                         </div>
                 </div>
             </div>
         </section>
-        <section id="talking-points">
-            <div class="container">
-                <div class="row bs-callout">
-                    <div class="col-lg-12 col-sm-12"><h2>{{ page.month }}'s Talking Points:</h2></div>
-                    <div class="col-lg-12 col-sm-12">
-                        <h3>1. Gratitude</h3>
-                        <h4 class="talking-point-subtitle">A recent action by Rep. {{ district.member.last_name }} you can thank him for:</h4>
-                        <div class="col-lg-12 col-sm-12">
-                            <p>{{ page.gratitude.text }}{% if page.gratitude.link %} (<a href="{{ page.gratitude.link }}" target="_blank">background info</a>){% endif %}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <h3>2. Education</h3>
-                        <h4 class="talking-point-subtitle">A climate fact or event recently in the news:</h4>
-                        <div class="col-lg-12 col-sm-12">
-                            <p>{{ page.education.text }}{% if page.education.link %} (<a href="{{ page.education.link }}" target="_blank">more info</a>){% endif %}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                        <h3>3. Request</h3>
-                        <h4 class="talking-point-subtitle">A specific requests for Rep. {{ district.member.last_name }}:</h4>
-                        <div class="col-lg-12 col-sm-12">
-                            <p>{{ page.request.text }}{% if page.request.link %} (<a href="{{ page.request.link }}" target="_blank">background info</a>){% endif %}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+
+
+
         <section id="how-this-works">
+            <div class="container"><div class="col-lg-12 col-sm-12"><h2>How This Works</h2></div></div>
             <div class="container">
                 <div class="row bs-callout">
-                    <div class="col-lg-12 col-sm-12"><h2>How This Works</h2></div>
                     <div class="col-lg-6 col-sm-6">
                         <h3>The Call</h3>
                         <p>Calling is simple, fast and non-threatening. You will either talk to a young staff member (not Rep. {{ district.member.last_name }}) or you will get a recording. Staff will not quiz you.</p>
@@ -64,6 +39,60 @@
                             </ul>
                             <p>Please call the office closest to you.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="talking-points">
+            <div class="container">
+                <div class="col-lg-12 col-sm-12"><h2>{{ page.month }}'s Talking Points:</h2></div>
+                <div class="col-lg-12 col-sm-12"><h4 style="font-style: italic">(Choose One)</h4></div>
+            </div>
+            <div class="container">
+                <div class="panel-group" id="accordian" role="tablist" aria-multiselectable="true">
+                    {% for talking_point in page.talking_points %}
+                        {% assign anchor_collapse_index = '#collapse' | append: forloop.index %}
+                        {% assign collapse_index = 'collapse' | append: forloop.index %}
+                        {% assign heading_index = 'heading' | append: forloop.index %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="{{ heading_index }}">
+                                <h3 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="{{ anchor_collapse_index }}" aria-expanded="true" aria-controls="{{ collapse_index }}">
+                                        {{ talking_point.theme }}
+                                    </a>
+                                </h3>
+                            </div>
+                            <div id="{{ collapse_index }}" class="panel-collapse collapse" role="tabpanel" id="{{ collapse_index }}" aria-labelledby="{{ heading_index }}">
+                                <div class="panel-body">
+                                    <div class="col-lg-12 col-sm-12">
+                                        <h4>1. Gratitude</h4>
+                                        <h5 class="talking-point-subtitle">A recent action by Rep. {{ district.member.last_name }} you can thank him for:</h5>
+                                        <div class="col-lg-12 col-sm-12">
+                                            <p>{{ talking_point.gratitude.text }}{% if talking_point.gratitude.link %} (<a href="{{ talking_point.gratitude.link }}" target="_blank">background info</a>){% endif %}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12">
+                                        <h4>2. Education</h4>
+                                        <h5 class="talking-point-subtitle">A climate fact or event recently in the news:</h5>
+                                        <div class="col-lg-12 col-sm-12">
+                                            <p>{{ talking_point.education.text }}{% if talking_point.education.link %} (<a href="{{ talking_point.education.link }}" target="_blank">more info</a>){% endif %}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12">
+                                        <h4>3. Request</h4>
+                                        <h5 class="talking-point-subtitle">A specific requests for Rep. {{ district.member.last_name }}:</h5>
+                                        <div class="col-lg-12 col-sm-12">
+                                            <p>{{ talking_point.request.text }}{% if talking_point.request.link %} (<a href="{{ talking_point.request.link }}" target="_blank">background info</a>){% endif %}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

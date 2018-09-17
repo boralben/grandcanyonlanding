@@ -3,7 +3,7 @@
 Jekyll theme based on [landing-page bootstrap theme ](http://startbootstrap.com/templates/landing-page/)
 
 ## How to use
- - Place a image in `/assets/img/info/`
+ - Place a image in `assets/img/info/`
  - Create posts to display your info. Use the follow as an example:
 
 ```txt

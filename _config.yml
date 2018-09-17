@@ -6,6 +6,9 @@ title: Project Grand Canyon
 email: projectgrandcanyon.atx@gmail.com
 description: "Congressional staffers and representatives have told us two things about climate change. They don’t hear much from people about climate change, and nothing is more powerful in helping a representative know what their constituents want than written letters and phone calls. Based on those simple facts, an effort called Project Grand Canyon was born. Just as the Grand Canyon was excavated one water drop at a time, our Members of Congress’ resistance to climate solutions will be worn down by the drip, drip, drip of 100 phone calls per month."
 url: "https://www.projectgrandcanyon.com"
+defaults:
+  - scope:
+      path: "assets"
 
 # ----------------------- #
 #    Jekyll & Plugins     #
