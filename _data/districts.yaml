@@ -14,21 +14,49 @@
   number: 21
   offices:
     - city: Austin
-      phone: 512-xxx-xxxx
+      phone: 512-912-7508
     - city: Kerrville
-      phone: xxx-xxx-xxx
-    - city: Washington D.C.
-      phone: 202-xxx-xxx
+      phone: 830-896-0154
+    - city: San Antonio
+      phone: 210-821-5024
   member:
     name: Lamar Smith
 - state: TX
   number: 10
   offices:
     - city: Austin
-      phone: 512-xxx-xxxx
-    - city: Houston
-      phone: xxx-xxx-xxx
+      phone: 512-473-2357
+    - city: Katy
+      phone: 281-398-1247
+    - city: Brenham
+      phone: 979-830-8497
+    - city: Tomball
+      phone: 281-255-8372
     - city: Washington D.C.
-      phone: 202-xxx-xxxx
+      phone: 202-225-2401
   member:
     name: Michael McCaul
+- state: TX
+  number: 17
+  offices:
+    - city: Austin
+      phone: 512-373-3378
+    - city: Bryan-College Station
+      phone: 979-703-4073
+    - city: Waco
+      phone: 254-732-0748
+    - city: Washington D.C.
+      phone: 202-225-6105
+  member:
+    name: Bill Flores
+- state: TX
+  number: 31
+  offices:
+    - city: Round Rock
+      phone: 512-246-1600
+    - city: Bell County (Temple)
+      phone: 254-933-1392
+    - city: Washington D.C.
+      phone: 202-225-3864
+  member:
+    name: John Carter
