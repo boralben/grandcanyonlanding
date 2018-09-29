@@ -20,7 +20,8 @@
     - city: San Antonio
       phone: 210-821-5024
   member:
-    name: Lamar Smith
+    first_name: Lamar
+    last_name: Smith
 - state: TX
   number: 10
   offices:
@@ -35,7 +36,8 @@
     - city: Washington D.C.
       phone: 202-225-2401
   member:
-    name: Michael McCaul
+    first_name: Michael
+    last_name: McCaul
 - state: TX
   number: 17
   offices:
@@ -48,7 +50,8 @@
     - city: Washington D.C.
       phone: 202-225-6105
   member:
-    name: Bill Flores
+    first_name: Bill
+    last_name: Flores
 - state: TX
   number: 31
   offices:
@@ -59,4 +62,5 @@
     - city: Washington D.C.
       phone: 202-225-3864
   member:
-    name: John Carter
+    first_name: John
+    last_name: Carter

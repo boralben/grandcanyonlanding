@@ -9,6 +9,7 @@ url: "https://www.projectgrandcanyon.com"
 defaults:
   - scope:
       path: "assets"
+future: true
 
 # ----------------------- #
 #    Jekyll & Plugins     #
