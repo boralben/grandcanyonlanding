@@ -68,22 +68,24 @@
                             </div>
                             <div id="{{ collapse_index }}" class="panel-collapse collapse" role="tabpanel" id="{{ collapse_index }}" aria-labelledby="{{ heading_index }}">
                                 <div class="panel-body">
-                                    <div class="col-lg-12 col-sm-12">
-                                        <h4>1. Gratitude</h4>
-                                        <h5 class="talking-point-subtitle">A recent action by Rep. {{ district.member.last_name }} you can thank him for:</h5>
+                                    {% if talking_point.gratitude %}
                                         <div class="col-lg-12 col-sm-12">
-                                            <p>{{ talking_point.gratitude.text }}{% if talking_point.gratitude.link %} (<a href="{{ talking_point.gratitude.link }}" target="_blank">more info</a>){% endif %}</p>
+                                            <h4>1. Gratitude</h4>
+                                            <h5 class="talking-point-subtitle">A recent action by Rep. {{ district.member.last_name }} you can thank him for:</h5>
+                                            <div class="col-lg-12 col-sm-12">
+                                                <p>{{ talking_point.gratitude.text }}{% if talking_point.gratitude.link %} (<a href="{{ talking_point.gratitude.link }}" target="_blank">more info</a>){% endif %}</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    {% endif %}
                                     <div class="col-lg-12 col-sm-12">
-                                        <h4>2. Education</h4>
+                                        <h4>{% if talking_point.gratitude %}2{% else %}1{% endif %}. Education</h4>
                                         <h5 class="talking-point-subtitle">A climate fact or event recently in the news:</h5>
                                         <div class="col-lg-12 col-sm-12">
                                             <p>{{ talking_point.education.text }}{% if talking_point.education.link %} (<a href="{{ talking_point.education.link }}" target="_blank">more info</a>){% endif %}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-sm-12">
-                                        <h4>3. Request</h4>
+                                        <h4>{% if talking_point.gratitude %}3{% else %}2{% endif %}. Request</h4>
                                         <h5 class="talking-point-subtitle">A specific requests for Rep. {{ district.member.last_name }}:</h5>
                                         <div class="col-lg-12 col-sm-12">
                                             <p>{{ talking_point.request.text }}{% if talking_point.request.link %} (<a href="{{ talking_point.request.link }}" target="_blank">more info</a>){% endif %}</p>
